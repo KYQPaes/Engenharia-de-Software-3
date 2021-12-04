@@ -1,0 +1,137 @@
+1- Crie uma classe abstrata , chamada Conexao.
+Esta classe deve ter os seguintes atributos, do tipo propriedade: 
+ •   status do tipo String 
+Esta classe deve ter os seguintes métodos:  
+ •   conectar   
+ •   desconectar  
+Nestes métodos apenas o corpo, isto sem código dentro. 
+Esta classe deve ter também os seguintes métodos abstratos: 
+ •   alterar 
+ •   excluir 
+ •   incluir 
+
+RE:
+public abstract class Conexao{
+
+	public String status;
+	
+	public void conectar() {}
+	public void desconectar{}
+	
+	public abstract alterar(){}
+	public abstract excluir(){}
+	public abstract incluir(){}
+
+} 
+
+2- Crie uma interface chamada Cadastros
+Esta interface deve ter os seguintes métodos: 
+
+public String getStatus(); 
+public int getCodigo(); 
+public void setCodigo(int codigo); 
+public String getNome(); 
+public void setNome(String nome);
+
+RE:
+package interface;
+public interface Cadastros{
+	public String getStatus(); 
+	public int getCodigo(); 
+	public void setCodigo(int codigo); 
+	public String getNome(); 
+	public void setNome(String nome);
+}
+
+3- Crie uma interface chamada Enderecos
+Esta interface deve ter os seguintes métodos: 
+public String getStatus(); 
+public String getEndereco(); 
+public void setEndereco(String endereco); 
+public String getCep(); 
+public void setCep(String cep); 
+public String getCidade(); 
+public void setCidade(String cidade); 
+public String getEstado(); 
+public void setEstado(String estado);
+
+RE:
+package interface;
+public interface Enderecos{
+	public String getStatus(); 
+	public String getEndereco(); 
+	public void setEndereco(String endereco); 
+	public String getCep(); 
+	public void setCep(String cep); 
+	public String getCidade(); 
+	public void setCidade(String cidade); 
+	public String getEstado(); 
+	public void setEstado(String estado);
+}
+
+4- Crie uma classe chamada Funcionarios
+Esta classe deve estender a classe Conexao e implementar as interfaces Cadastros e Enderecos 
+Os métodos desta classe devem ter apenas o corpo, isto sem código dentro. 
+
+RE:
+package interface;
+public class Funcionarios extends Conexao implements Cadastros, Enderecos{
+	setCEP("07500000");
+	setEndereco("Rua Prefeito");
+	setCidade("Santa Isabel")
+}
+
+5- Design Clothing
+RE
+public interface DAO {
+	public abstract void inserir();
+	public abstract void excluir();
+	public abstract void localizar();
+}
+
+public interface Estoque {
+    public abstract void baixar();
+
+}
+
+public class Cliente implements DAO{
+   private int codigo;
+   private String nome;
+   public void inserir(){}
+   public void excluir(){}
+   public void localizar(){}
+   }
+
+public class Fornecedor implements DAO{
+   private String CNPJ;
+   private String RazaoSocial;
+   public void inserir(){}
+   public void excluir(){}
+   public void localizar(){}
+   }
+---------------------------------------------------------------------
+public abstract class Clothing{
+
+  private int ID=0;
+  Private String description ="-description required -";
+
+  private double price=0.0;
+  private int quantityInStocky=0;
+
+  public void calculateID() {
+      int uniqueID;
+  }
+
+} 
+
+public class Shirt extends Clothing{
+	System.out.println("Shirt ID:" + getID());
+	System.out.println("Shirt Description:" + getDescription());
+	System.out.println("Color code:" + colorCODE());
+	System.out.println("Shirt price:" + getPrice());
+	System.out.println("Quantity in stock:" + getQuantityInStock());
+}
+
+
+
+
